@@ -1,0 +1,155 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+
+
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+    <h2>  Registration Form for Without Smartphone Workers</h2>
+    <hr>
+</div>
+{% for message in messages %}
+{% if message.tags == "success" %}
+<div class="alert alert-success">
+    <a class="close" href="#" data-dismiss="alert">×</a>
+    {% else %}
+    <div class="alert alert-danger">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {% endif %}
+
+        {{ message }}
+        </div>
+        {% endfor %}
+<form method="post">{% csrf_token %}
+          <div class="row" style="margin-left: 23px;margin-right: 23px;margin-bottom: 25px;">
+              <div class="col">            
+                  <input type="text" class="form-control" placeholder=" First Name" name="fname" >
+              </div>
+          <div class="col">              
+             <input type="text" class="form-control" placeholder=" Last Name " name="lname"  >
+          </div>
+           </div>
+      <div class="row" style="
+      margin-left: 23px;
+      margin-right: 23px;
+      margin-bottom: 25px;
+  ">
+          <div class="col">
+             
+              <input type="text" class="form-control" placeholder="Username" name="username"  >
+            </div>
+           <div class = "col" >
+                 
+                 <input type="date" class="form-control" placeholder="DOB" name="dob" >
+           </div>
+          </div>
+          <div class="row" style="
+          margin-left: 23px;
+          margin-right: 23px;
+          margin-bottom: 25px;
+      ">
+              <div class="col">
+                 
+                 <div class="row">
+                     <lable style="margin-left: 10px;" >Gender: </lable>
+                 <input type="radio"  style="margin-top: 6px;margin-left: 18px;" id="male" name="gender" value="male">
+                 <label for="male" style="margin-left: 10px;">Male</label><br>
+                 <input type="radio" style="margin-top: 6px;margin-left: 18px;" id="female" name="gender" value="female">
+                 <label for="female" style="margin-left: 10px;">Female</label><br>
+                 <input type="radio" style="margin-top: 6px;margin-left: 18px;" id="other" name="gender" value="other">
+                 <label for="other" style="margin-left: 10px;">Other</label>
+               </div>
+             </div>
+               <div class = "col" >
+                    
+                     <input type="text" class="form-control" placeholder="Aadhar No" name="adhar_no" >
+               </div>
+              </div>
+
+                  <div class="row" style="
+                  margin-left: 23px;
+                  margin-right: 23px;
+                  margin-bottom: 25px;
+              ">
+                      <div class="col">
+                      
+                          <input type="text" class="form-control" placeholder="Address" name="address" >
+                       </div>
+                       <div class="col">
+                       
+                             <input type="text" class="form-control" placeholder="Phone No " name="phone" >
+                       </div>
+                      </div>
+
+
+                  <div class="row" style="
+                  margin-left: 23px;
+                  margin-right: 23px;
+                  margin-bottom: 25px;
+              ">
+                      <div class="col">
+                      
+                          <input type="password" class="form-control" placeholder="Password"  name="password">
+                       </div>
+                       <div class="col">
+                       
+                             <input type="password" class="form-control" placeholder="Confirm Password" name="re_password" >
+                       </div>
+                      </div>
+
+
+
+                      <form>
+                        <div class="row" style="
+                        margin-left: 23px;
+                        margin-right: 23px;
+                        margin-bottom: 25px;
+                    ">
+                            <div class="col">
+                                
+                                <input type="text" class="form-control" placeholder=" Category 1" name="category1" >
+                               </div>
+                               <div class="col">      
+                                   <input type="text" class="form-control" placeholder=" visiting Charges " name="category1vc" >
+                                </div>
+                               <div class="col">   
+                               <input type="text" class="form-control" placeholder=" Experience " name="category1exp" >
+                               </div>
+                            </div>
+                            <div class="row" style="
+                        margin-left: 23px;
+                        margin-right: 23px;
+                        margin-bottom: 25px;
+                    ">
+                            <div class="col">
+                                
+                               <input type="text" class="form-control" placeholder=" Category 2" name="category2" >
+                               </div>
+                               <div class="col">      
+                                   <input type="text" class="form-control" placeholder=" visiting Charges " name="category2vc" >
+                                </div>
+                               <div class="col">   
+                               <input type="text" class="form-control" placeholder=" Experience " name="category2exp" >
+                               </div>
+                            </div>
+           
+                            <div class="row" style="
+                            margin-left: 23px;
+                            margin-right: 23px;
+                            margin-bottom: 25px;
+                        ">
+                                <div class="col">
+                                    
+                                   <input type="text" class="form-control" placeholder=" Category 3" name="category3" >
+                               </div>
+                               <div class="col">      
+                                   <input type="text" class="form-control" placeholder=" visiting Charges " name="category3vc" >
+                                </div>
+                               <div class="col">   
+                               <input type="text" class="form-control" placeholder=" Experience " name="category3exp" >
+                               </div>
+                                </div>
+                      <button type="submit" style= "float: right;margin-right: 35px;" id = "btn1" class="btn btn-primary" role="button" href= "#" > Create </button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+  <h2> Registerd Phone Numbers </h2>
+  <hr>
+</div>
+      <div class="card spectrum-backgroundc " style="
+                
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 2%;
+      margin-left: 3%;
+      border-radius: 5px;
+      margin-right: auto;
+      width: 94%;
+
+
+
+        ">
+<div class="container-fluid" >
+  <table class="table table-bordered" style=" margin-top : 50px ;margin-left : 200px; width : 800px; ">
+    <thead>
+      <tr style=" background-color : #5c6bc0 ; ">
+        <th>Sr no.</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>8999252564</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>9011252564</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>8099252564</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>8909852564</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>8923352564</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <a id = "btn1" style="  margin-left : 1000px;" class="btn btn-info" role="button" href=" {% url 'create' %} "> Create </a>
+
+
+</div>
+
+
+{% endblock %}

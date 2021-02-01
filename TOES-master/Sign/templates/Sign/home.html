@@ -1,0 +1,324 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>PILLARS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+
+
+
+
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.collapsible {
+  background-color: #111;
+  color: #e4dcdc9c;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #111;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #111;
+}
+
+
+.spectrum-backgrounda {
+    background:
+        linear-gradient(#45bfe4, transparent),
+        linear-gradient(to  right, #3895d3, transparent),
+        linear-gradient(to  left, #072f5f, transparent);
+    background-blend-mode: screen;
+}
+
+</style>
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+  <h3 style="color: #9efafb;padding-left: 50px;">PILLARS</h3>
+  <hr style="width: 135px; color: white">
+<div class="Container" style= "margin-left: 20px">
+<a  href= "{% url 'Home' %}" style="font-size: large;">Home</a>
+<a  href= "{% url 'allusers' %}" style="font-size: large;">Users</a>
+<a href= "{% url 'recruiters' %}" style="font-size: large;">All Jobs</a>
+<a href= "{% url 'workers'%}" style="font-size: large;">Worker</a>
+<a href= " {% url 'create' %} " style="font-size: large;">Registeration</a>
+<a href= "{% url 'sign_up' %}" style="font-size: large;">Create Admin</a>
+</div>
+</div>
+  
+
+<div id="main">
+<nav class="navbar navbar-light spectrum-backgrounda"  style="
+    border-radius: 13px;
+" >
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Dashboard</span><br>
+
+
+   <div class="dropdown" style="
+    margin-right: 64px;
+">
+
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Avatar" style="width:50px"><span class="caret"></span></a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'sign_in' %}" class=" dropdown-item btn btn-primary">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+    </div>
+  </div>
+   
+
+
+</nav>
+<br>
+<div class="card-cloumns" style="
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-left: auto;
+    border-radius: 5px;
+    margin-right: auto;
+    padding-bottom: 7%;
+    width: 100%;
+    
+">
+{% block content %}
+  <div class="container" style="    padding: 34px 0px 19px 0px;">
+    <h2 >Analytics</h2>
+    <hr>
+  </div>
+  <br>
+<div class="row">
+      <div class="card  " style="
+          
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+   
+
+
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Total Workers</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #4285F4;    font-weight: bold;" >{{ worker_count }}</h1>
+
+      </div>
+
+      <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+  
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Total Recruiters</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #ffbb00;    font-weight: bold;" >{{ recruiter_count }}</h1>
+
+
+        
+      </div>
+
+
+          <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+   
+      ">
+         <h3 style="font-size:2vw;" class="card-title">Total Jobs</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #EA4335;    font-weight: bold;" >{{ job_count }}</h1>
+
+
+        
+      </div>
+
+
+          <div class="card " style="
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-right: auto;
+    width: 20%;
+      ">
+           <h3 style="font-size:2vw;" class="card-title">Accepted Jobs</h3>
+         <h1 class="card-subtitle mb-2 " style="font-size: 88px;color: #7cbb00; font-weight: bold;">{{ accepted_count }}</h1>
+
+
+
+
+        
+      </div>
+
+
+</div>
+
+
+{% endblock %}
+</div>
+
+
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+$(document).ready(function() { 
+  $("#owl-demo").owlCarousel({ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds 
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3] 
+  }); 
+});
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    window.setTimeout(function () {
+      $(".alert").fadeTo(1000, 0).slideUp(1000, function () {
+        $(this).remove();
+      });
+    }, 1000);
+
+  });
+</script>
+
+</body>
+</html>

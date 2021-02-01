@@ -1,0 +1,81 @@
+{% extends 'Sign/home.html' %}
+{ % load static % }
+{% block content %}
+
+
+<div class="container" style="    padding: 34px 0px 19px 0px;">
+  <h2> Total Jobs </h2>
+  <hr>
+</div>
+      <div class="card spectrum-backgroundc " style="
+                
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 2%;
+      margin-left: 3%;
+      border-radius: 5px;
+      margin-right: auto;
+      width: 94%;">
+
+            <!--Table-->
+              <table class="table table-hover table-fixed" >
+                
+
+                    <!--Table head-->
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Job Title</th>
+                        <th>Job Description</th>
+                        <th>Status</th>
+                        <th>Recruiter id </th>
+                        
+                      </tr>
+                    </thead>
+                    <!--Table head-->
+
+                    <!--Table body-->
+                    <tbody>
+                        {% for i in response %}
+                        <tr>
+
+                        <th scope="row">{{i.id}}</th>
+                        <td>{{i.job_title}}</td>
+                        <td>{{i.job_Description}}</td>
+                        <td>
+                          {% if i.status == 1 %}
+                                 Pending
+                            {% elif i.status == 2 %}
+                                  Accepted
+                            {% else %}
+                                  Rejected
+                            {% endif %}
+                            </td>
+                        <td>{{i.recruiter}}</td>
+                       
+                         </tr>
+                        {% endfor %}
+
+
+                    </tbody>
+                    <!--Table body-->
+
+                  </table>
+                  <!--Table-->
+        </div>
+
+
+
+
+<script>
+var d = new Date();
+var date = d.toLocaleDateString();
+var time = d.toLocaleTimeString();
+document.getElementById("date").innerHTML = date;
+document.getElementById("time").innerHTML = time;
+</script>
+
+
+{% endblock %}
